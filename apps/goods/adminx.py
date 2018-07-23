@@ -15,6 +15,7 @@ import xadmin
 from .models import Goods, GoodsCategory, GoodsImage, GoodsCategoryBrand, Banner, HotSearchWords
 from .models import IndexAd
 
+
 class GoodsAdmin(object):
     list_display = ["name", "click_num", "sold_num", "fav_num", "goods_num", "market_price",
                     "shop_price", "goods_brief", "goods_desc", "is_new", "is_hot", "add_time"]
