@@ -30,7 +30,7 @@ SECRET_KEY = 'dlhgb$3pf8@enmd9xx-inoj$^gqoj6d7sd04iu6_i_e+!j9_u7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 AUTH_USER_MODEL = 'users.UserProfile'
 
@@ -45,10 +45,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'DjangoUeditor',
-    'apps.users',
-    'goods',
-    'trade',
-    'user_operation',
+    'goods.apps.GoodsConfig',
+    'trade.apps.TradeConfig',
+    'user_operation.apps.UserOperationConfig',
 ]
 
 MIDDLEWARE = [
@@ -92,7 +91,7 @@ DATABASES = {
         'PASSWORD': 'et1608',
         'HOST': 'localhost',
         'PORT': '3306',
-        'OPTIONS':{'init_command':'SET storage_engine=INNODB;'}
+        'OPTIONS': {'init_command': 'SET storage_engine=INNODB;'}
     }
 }
 
