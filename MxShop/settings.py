@@ -50,7 +50,7 @@ INSTALLED_APPS = [
     'user_operation.apps.UserOperationConfig',
     "crispy_forms",
     "xadmin",
-
+    "rest_framework",
 ]
 
 MIDDLEWARE = [
@@ -140,3 +140,7 @@ STATICFILES_DIRS = (
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+REST_FRAMEWORK = {
+    'PAGE_SIZE': 10,
+}
