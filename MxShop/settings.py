@@ -90,13 +90,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "mxshop",
-        'USER': 'root',
+        'USER': 'test',
         'PASSWORD': 'et1608',
         'HOST': 'localhost',
         'PORT': '3306',
-        'OPTIONS': {'init_command': 'SET storage_engine=INNODB;'}
+        'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }
 }
+# grant all privileges on mxshop.* to 'test'@'localhost' identified by 'et1608'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators

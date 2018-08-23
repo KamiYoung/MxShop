@@ -1,0 +1,13 @@
+venv
+*.pyc
+.env
+local_*
+*.local
+.idea
+nogit
+.DS_Store
+.vscode
+push.ps1
+clib/
+push.sh
+tmp_*
