@@ -3,11 +3,11 @@ venv
 .env
 local_*
 *.local
-.idea
+.idea/
 nogit
 .DS_Store
+cert
 .vscode
 push.ps1
-clib/
 push.sh
 tmp_*
