@@ -3,7 +3,7 @@ venv
 .env
 local_*
 *.local
-.idea/
+.idea
 nogit
 .DS_Store
 cert
