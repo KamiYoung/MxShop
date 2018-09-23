@@ -32,10 +32,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-AUTH_USER_MODEL = 'users.UserProfile'
+LOGIN_REDIRECT_URL = '/'
 
+LOGIN_URL = '/login/'
 # Application definition
 
+#AUTH_USER_MODEL = 'common.User'
+AUTH_USER_MODEL = 'users.UserProfile'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +54,16 @@ INSTALLED_APPS = [
     "crispy_forms",
     "xadmin",
     "rest_framework",
+    #'compressor',
+    #'common',
+    'accounts',
+    'cases',
+    'contacts',
+    #'emails',
+    'leads',
+    'opportunity',
+    'planner',
+    'simple_pagination',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +81,7 @@ ROOT_URLCONF = 'MxShop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates"), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
