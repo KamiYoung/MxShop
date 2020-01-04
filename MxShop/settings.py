@@ -32,10 +32,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
-AUTH_USER_MODEL = 'users.UserProfile'
+LOGIN_REDIRECT_URL = '/'
 
+LOGIN_URL = '/login/'
 # Application definition
 
+#AUTH_USER_MODEL = 'common.User'
+AUTH_USER_MODEL = 'users.UserProfile'
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -51,6 +54,16 @@ INSTALLED_APPS = [
     "crispy_forms",
     "xadmin",
     "rest_framework",
+    #'compressor',
+    #'common',
+    'accounts',
+    'cases',
+    'contacts',
+    #'emails',
+    'leads',
+    'opportunity',
+    'planner',
+    'simple_pagination',
 ]
 
 MIDDLEWARE = [
@@ -68,7 +81,7 @@ ROOT_URLCONF = 'MxShop.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, "templates"), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -90,13 +103,15 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': "mxshop",
-        'USER': 'root',
+        'USER': 'test',
         'PASSWORD': 'et1608',
         'HOST': 'localhost',
         'PORT': '3306',
-        'OPTIONS': {'init_command': 'SET storage_engine=INNODB;'}
+        'OPTIONS': { 'init_command': 'SET default_storage_engine=INNODB,character_set_connection=utf8,collation_connection=utf8_unicode_ci;' }
+        # 'OPTIONS': {'init_command': 'SET default_storage_engine=INNODB;'}
     }
 }
+# grant all privileges on mxshop.* to 'test'@'localhost' identified by 'et1608'
 
 # Password validation
 # https://docs.djangoproject.com/en/2.0/ref/settings/#auth-password-validators
